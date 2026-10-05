@@ -1,0 +1,18 @@
+[package]
+name = "old_moon"
+version = "0.1.0"
+edition = "2021"
+
+[features]
+default = ["lua"]
+lua    = ["mlua"]
+python = ["pyo3"]
+ruby   = ["magnus"]
+
+[dependencies]
+pcap = "0.10"
+pnet = "0.34"
+
+mlua   = { version = "0.9", features = ["lua54", "vendored"], optional = true }
+pyo3   = { version = "0.20", features = ["auto-initialize"],      optional = true }
+magnus = { version = "0.6", optional = true }
